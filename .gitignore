@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Environments
+.venv/
+env/
+venv/
+env.bak/
+*.env
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*.bak
+
+# Flask / Django
+instance/
+.webassets-cache/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Logs and Databases
+*.log
+*.sql
+*.sqlite
+
+# Coverage
+.coverage
+.coverage.*
+*.cover
+*.tox/
+
+# Pytest
+.cache/
+
+# mypy
+.mypy_cache/
+
+# Pyre
+.pyre/

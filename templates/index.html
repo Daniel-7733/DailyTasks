@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>TODO LIST</title>
+            <!-- Favicon: https://www.flaticon.com/free-icon/check-list_7246748?term=todo+list&page=1&position=5&origin=search&related_id=7246748 -->
+            <link rel="icon" type="image/x-icon" href="static/images/check-list.png">
+            <link rel="stylesheet" href="{{ url_for('static', filename='static/css/main.css') }}">
+        </head>
+        <body>
+
+            <h1>My To Do List</h1>
+
+            <main>
+                <form class="form-field" id="list-form" method="POST" action="{{ url_for('add') }}">
+                    <div class="add-field">
+                        <input type="text" name="daily-task-input"  id="daily-task-title" class="task-input" placeholder="Add your task" required>
+                        <textarea name="note-text" id="task-description" class="task-text-input" placeholder="Description" required></textarea>
+                        <button type="submit" id="add-button">Add</button>
+                    </div>
+                </form>
+
+                <div class="show-field">
+                    <h2>Your Daily Task</h2>
+                    <p>Buy Food</p>
+                    <input type="checkbox" name="checkbox-input"  id="checkbox-title" class="checkbox-input" required>
+                    <button type="submit" id="delete-button">Delete</button>
+                </div>
+            </main>
+
+        </body>
+    </html>
