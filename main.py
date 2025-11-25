@@ -50,7 +50,7 @@ def add() -> Response:
     link: str = request.form["link-input"]
     note: str = request.form["note-text"]
 
-    todo_list = TodoList(name=name, link=link, note=note)
+    todo_list: TodoList = TodoList(name=name, link=link, note=note)
     db.session.add(todo_list)
     db.session.commit()
     flash("Task successfully added.", "success")
