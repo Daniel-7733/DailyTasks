@@ -2,6 +2,7 @@
     <html lang="en">
         <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title>TODO LIST</title>
             <!-- Favicon: https://www.flaticon.com/free-icon/check-list_7246748?term=todo+list&page=1&position=5&origin=search&related_id=7246748 -->
             <link rel="icon" type="image/x-icon" href="static/images/check-list.png">
@@ -15,6 +16,7 @@
                 <form class="form-field" id="list-form" method="POST" action="{{ url_for('add') }}">
                     <div class="add-field">
                         <input type="text" name="daily-task-input"  id="daily-task-title" class="task-input" placeholder="Add your task" required>
+                        <input type="text" name="link-input"  id="link-task" class="link-input" placeholder="Add your link">
                         <textarea name="note-text" id="task-description" class="task-text-input" placeholder="Description" required></textarea>
                         <button type="submit" id="add-button">Add</button>
                     </div>
@@ -22,9 +24,17 @@
 
                 <div class="show-field">
                     <h2>Your Daily Task</h2>
-                    <p>Buy Food</p>
-                    <input type="checkbox" name="checkbox-input"  id="checkbox-title" class="checkbox-input" required>
-                    <button type="submit" id="delete-button">Delete</button>
+                    {% for task in tasks %}
+                        {% if task == link %}
+                            <a href={{task.link}} class="open-link">Go to</a>
+                        {% else %}
+                            <p class="task-title"><strong>{{ task.name }}</strong></p>
+                            <p class="note-place">{{ task.note }}</p>
+                            <input type="checkbox" name="checkbox-input"  id="checkbox-title" class="checkbox-input" required>
+                            <button type="submit" id="delete-button">Delete</button>
+                        {% endif %}
+                    {% endfor %}
+
                 </div>
             </main>
 

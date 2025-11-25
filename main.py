@@ -16,8 +16,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 class TodoList(db.Model):
     id: int = db.Column(db.Integer, primary_key=True)
     name: str = db.Column(db.String(100), nullable=False)
-    link: str = db.Column(db.String(1000), nullable=True)
-    note: str = db.Column(db.String(1000), nullable=True)
+    link: str = db.Column(db.String(500), nullable=True)
+    note: str = db.Column(db.String(200), nullable=True)
 
 
 # --- DB init ---
@@ -28,17 +28,37 @@ with app.app_context():
 
 @app.route('/')
 def home() -> str:
-    """Open the home page"""
-    return render_template("index.html")
+    """Open the home page & show all to do task"""
+    tasks: list[TodoList] = TodoList.query.all()
+    return render_template("index.html", tasks=tasks)
 
 
 @app.route("/add-task", methods=["GET", "POST"])
-def add() -> str:
+def add() ->  Response | str:
     """Add the task"""
-    # TODO: receive data from html
-    # TODO: Add data in database
+    if request.method == "POST":
+        name: str = request.form["daily-task-input"]
+        link: str = request.form["link-input"]
+        note: str = request.form["note-text"]
+
+        todo_list: TodoList = TodoList(
+            name=name,
+            link=link,
+            note=note
+        )
+
+        db.session.add(todo_list)
+        db.session.commit()
+        flash("Task Successfully added.", "success")
+        return redirect(url_for("home"))
     return render_template("index.html")
 
+
+@app.route("/delete-task")
+def delete() -> str:
+    """Delete the task"""
+    #TODO: find the task by id and then delete it.
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
