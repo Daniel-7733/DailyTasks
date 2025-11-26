@@ -1,9 +1,5 @@
-
-* {
-    background-color: #c6fe8e;
-}
-
 body {
+    background-color: #c6fe8e;
     font-family: 'Times New Roman', Times, serif;
     padding: 10px;
 }
@@ -21,12 +17,14 @@ h1 {
     border-radius: 6px;
     background-color: #cccbc8;
     border: 2px solid gray;
-    max-width: 70%;
+    max-width: 30%;
     padding: 1em;
+    margin-right: 10em;
     margin-bottom: .4em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    float: right;
 }
 
 .add-field:hover {
@@ -63,6 +61,7 @@ h1 {
     resize: none;
 }
 
+/* This apply for all buttons */
 button {
     background-color: #cccbc8;
     margin: 7px;
@@ -72,8 +71,41 @@ button {
 
 button:hover {
     background-color: #9c9b98;
+    font-weight: bold;
     font-size: 18px;
 }
 
 
 /* Second Part: Form Two */
+
+.show-field {
+    border-radius: 6px;
+    background-color: #cccbc8;
+    border: 2px solid gray;
+    max-width: 50%;
+    padding: 1em;
+    margin-left: 10em;
+    margin-bottom: .4em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+h2 {
+    background: #cccbc8;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.task-item {
+    background: #f7bd7e;
+    padding: 10px;
+    margin: 10px;
+}
+
+.task-item:hover {
+    background-color: #eb9b44;
+    font-size: 18px;
+}
