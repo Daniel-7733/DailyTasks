@@ -3,8 +3,77 @@
     background-color: #c6fe8e;
 }
 
-h1 {
+body {
     font-family: 'Times New Roman', Times, serif;
     padding: 10px;
 }
 
+h1 {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+
+/* First Part: Form One */
+
+.add-field {
+    border-radius: 6px;
+    background-color: #cccbc8;
+    border: 2px solid gray;
+    max-width: 70%;
+    padding: 1em;
+    margin-bottom: .4em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.add-field:hover {
+    background-color: #9c9b98;
+    font-size: 18px;
+}
+
+
+.task-input {
+    margin: 7px;
+    padding: 7px;
+    width: 300px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+.link-input {
+    margin: 7px;
+    padding: 7px;
+    width: 300px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+}
+
+.task-text-input {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 5px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+button {
+    background-color: #cccbc8;
+    margin: 7px;
+    padding: 7px 15px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #9c9b98;
+    font-size: 18px;
+}
+
+
+/* Second Part: Form Two */
