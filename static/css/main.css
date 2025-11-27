@@ -1,6 +1,9 @@
-body {
-    background-color: #c6fe8e;
+* {
     font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: #fdfcf7;
     padding: 10px;
 }
 
@@ -10,13 +13,15 @@ h1 {
     text-align: center;
 }
 
+/* Global color for two field */
+.add-field, .show-field {
+    background-color: #f7f2ed;
+    border: 1px solid #d1c5b8;
+}
 
 /* First Part: Form One */
-
 .add-field {
     border-radius: 6px;
-    background-color: #cccbc8;
-    border: 2px solid gray;
     max-width: 30%;
     padding: 1em;
     margin-right: 10em;
@@ -28,7 +33,7 @@ h1 {
 }
 
 .add-field:hover {
-    background-color: #9c9b98;
+    background-color: #d4e5f8;
     font-size: 18px;
 }
 
@@ -63,14 +68,16 @@ h1 {
 
 /* This apply for all buttons */
 button {
-    background-color: #cccbc8;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
     margin: 7px;
     padding: 7px 15px;
     font-size: 16px;
 }
 
 button:hover {
-    background-color: #9c9b98;
+    background-color: #3a78c2;
     font-weight: bold;
     font-size: 18px;
 }
@@ -80,8 +87,6 @@ button:hover {
 
 .show-field {
     border-radius: 6px;
-    background-color: #cccbc8;
-    border: 2px solid gray;
     max-width: 50%;
     padding: 1em;
     margin-left: 10em;
@@ -99,13 +104,17 @@ h2 {
     text-align: center;
 }
 
+.task-title {
+    font-size: 20px;
+}
+
 .task-item {
-    background: #f7bd7e;
+    background-color: #e8f1fb;
     padding: 10px;
     margin: 10px;
 }
 
 .task-item:hover {
-    background-color: #eb9b44;
+    background-color: #d4e5f8;
     font-size: 18px;
 }

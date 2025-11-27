@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, Response
 from flask_sqlalchemy import SQLAlchemy
+from time import gmtime, strftime
 from os import path, makedirs
 
 
@@ -35,8 +36,10 @@ def home() -> str:
 
     :return: home page
     """
+    full_date: str = strftime("%A, %d %B %Y", gmtime())
+    current_day: str = strftime("%A", gmtime())
     tasks: list[TodoList] = TodoList.query.all()
-    return render_template("index.html", tasks=tasks)
+    return render_template("index.html", tasks=tasks, full_date=full_date, current_day=current_day)
 
 
 @app.route("/add-task", methods=["POST"])
