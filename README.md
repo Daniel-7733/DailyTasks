@@ -28,18 +28,19 @@ It lets you create, view, and manage your daily tasks in a clean, minimal interf
 ```text
 DailyTasks/
 │
-├─ .venv/                 # Virtual environment (not needed on GitHub)
+├─ .venv/                
 ├─ instance/
-│   └─ todo.db            # SQLite database
+│   └─ todo.db            
 ├─ static/
 │   ├─ css/
-│   │   └─ main.css       # Stylesheet
+│   │   └─ main.css       
 │   └─ images/
 │       └─ check-list.png # Icon / illustration for the UI
 ├─ templates/
-│   └─ index.html         # Main page template
-├─ .gitignore             # Files and folders to ignore in Git
-└─ main.py                # Application entry point
+│   └─ index.html        
+├─ .gitignore           
+├─ requirements.txt 
+└─ main.py         
 ```
 
 ---

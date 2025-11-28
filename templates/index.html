@@ -1,102 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO LIST</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/check-list.png') }}">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='images/check-list.png') }}"
+    />
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
     <h1>Your Daily Tasks</h1>
 
     <!-- Flash messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul class="flash-messages">
-          {% for category, message in messages %}
-            <li class="flash {{ category }}">{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul class="flash-messages">
+      {% for category, message in messages %}
+      <li class="flash {{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
 
     <main>
-        <!-- Add task form -->
-        <section>
-            <form class="form-field" id="list-form" method="POST" action="{{ url_for('add') }}">
-                <div class="add-field">
-                    <input
-                        type="text"
-                        name="daily-task-input"
-                        id="daily-task-title"
-                        class="task-input"
-                        placeholder="Add your task"
-                        required
-                    > <br>
-                    <input
-                        type="text"
-                        name="link-input"
-                        id="link-task"
-                        class="link-input"
-                        placeholder="Add your link (optional)"
-                    > <br>
-                    <textarea
-                        name="note-text"
-                        id="task-description"
-                        class="task-text-input"
-                        placeholder="Description"
-                        required
-                    ></textarea> <br>
-                    <button type="submit" id="add-button">Add</button>
-                </div>
-            </form>
-        </section>
+      <!-- Add task form -->
+      <section>
+        <form
+          class="form-field"
+          id="list-form"
+          method="POST"
+          action="{{ url_for('add') }}"
+        >
+          <div class="add-field">
+            <input
+              type="text"
+              name="daily-task-input"
+              id="daily-task-title"
+              class="task-input"
+              placeholder="Add your task"
+              required
+            />
+            <br />
+            <input
+              type="text"
+              name="link-input"
+              id="link-task"
+              class="link-input"
+              placeholder="Add your link (optional)"
+            />
+            <br />
+            <textarea
+              name="note-text"
+              id="task-description"
+              class="task-text-input"
+              placeholder="Description"
+              required
+            ></textarea>
+            <br />
+            <button type="submit" id="add-button">Add</button>
+          </div>
+        </form>
+      </section>
 
-        <!-- Show tasks -->
-        <section class="show-field">
-            <h2 class="header-h1">Your {{ current_day }} Tasks</h2>
+      <!-- Show tasks -->
+      <section class="show-field">
+        <h2 class="header-h1">Your {{ current_day }} Tasks</h2>
 
-            {% if tasks %}
-                {% for task in tasks %}
-                    <div class="task-item">
-                        <div class="task-main">
-                            <p class="task-title"><strong>{{ task.name }}</strong></p>
-                            {% if task.note %}
-                                <p class="note-place">{{ task.note }}</p>
-                            {% endif %}
-                        </div>
+        {% if tasks %} {% for task in tasks %}
+        <div class="task-item">
+          <div class="task-main">
+            <p class="task-title"><strong>{{ task.name }}</strong></p>
+            {% if task.note %}
+            <p class="note-place">{{ task.note }}</p>
+            {% endif %}
+          </div>
 
-                        <div class="task-actions">
-                            <input type="checkbox" class="checkbox-input" title="Mark as done (visual only)">
+          <div class="task-actions">
+            <input
+              type="checkbox"
+              class="checkbox-input"
+              title="Mark as done (visual only)"
+            />
 
-                            {% if task.link %}
-                                <a href="{{ task.link }}"
-                                   class="open-link"
-                                   target="_blank"
-                                   rel="noopener noreferrer">
-                                    Go to
-                                </a>
-                            {% endif %}
-
-                            <form method="POST" action="{{ url_for('delete', task_id=task.id) }}">
-                                <button type="submit" id="delete-button">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% else %}
-                <p class="empty-state">You don't have any tasks yet. Add one above!</p>
+            {% if task.link %}
+            <a
+              href="{{ task.link }}"
+              class="open-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Go to
+            </a>
             {% endif %}
 
-            <h5 class="footer-h5">{{ full_date }}</h5>
-        </section>
-    </main>
+            <form
+              method="POST"
+              action="{{ url_for('delete', task_id=task.id) }}"
+            >
+              <button type="submit" id="delete-button">Delete</button>
+            </form>
+          </div>
+        </div>
+        {% endfor %} {% else %}
+        <p class="empty-state">You don't have any tasks yet. Add one above!</p>
+        {% endif %}
 
-</body>
+        <h5 class="footer-h5">{{ full_date }}</h5>
+      </section>
+    </main>
+  </body>
 </html>

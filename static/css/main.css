@@ -1,136 +1,135 @@
 * {
-    font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 body {
-    background-color: #fdfcf7;
-    padding: 10px;
+  background-color: #fdfcf7;
+  padding: 10px;
 }
 
 h1 {
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
 }
 
 /* Global color for two field */
-.add-field, .show-field {
-    background-color: #f7f2ed;
-    border: 1px solid #d1c5b8;
+.add-field,
+.show-field {
+  background-color: #f7f2ed;
+  border: 1px solid #d1c5b8;
 }
 
 /* First Part: Form One */
 .add-field {
-    border-radius: 6px;
-    max-width: 30%;
-    padding: 1em;
-    margin-right: 10em;
-    margin-bottom: .4em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    float: right;
+  border-radius: 6px;
+  max-width: 30%;
+  padding: 1em;
+  margin-right: 10em;
+  margin-bottom: 0.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: right;
 }
 
 .add-field:hover {
-    background-color: #d4e5f8;
-    font-size: 18px;
+  background-color: #d4e5f8;
+  font-size: 18px;
 }
 
-
 .task-input {
-    margin: 7px;
-    padding: 7px;
-    width: 300px;
-    background-color: #f8f8f8;
-    font-size: 16px;
+  margin: 7px;
+  padding: 7px;
+  width: 300px;
+  background-color: #f8f8f8;
+  font-size: 16px;
 }
 
 .link-input {
-    margin: 7px;
-    padding: 7px;
-    width: 300px;
-    background-color: #f8f8f8;
-    font-size: 16px;
+  margin: 7px;
+  padding: 7px;
+  width: 300px;
+  background-color: #f8f8f8;
+  font-size: 16px;
 }
 
 .task-text-input {
-    width: 100%;
-    height: 150px;
-    padding: 12px;
-    box-sizing: border-box;
-    border: 5px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    resize: none;
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 5px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }
 
 /* This apply for all buttons */
 button {
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    margin: 7px;
-    padding: 7px 15px;
-    font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  margin: 7px;
+  padding: 7px 15px;
+  font-size: 16px;
 }
 
 button:hover {
-    background-color: #3a78c2;
-    font-weight: bold;
-    font-size: 18px;
+  background-color: #3a78c2;
+  font-weight: bold;
+  font-size: 18px;
 }
-
 
 /* Second Part: Form Two */
 
 .show-field {
-    border-radius: 6px;
-    max-width: 50%;
-    padding: 1em;
-    margin-left: 10em;
-    margin-bottom: .4em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    float: left;
+  border-radius: 6px;
+  max-width: 50%;
+  padding: 1em;
+  margin-left: 10em;
+  margin-bottom: 0.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
 }
 
 h2 {
-    background: #cccbc8;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
+  background: #cccbc8;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
 }
 
 .task-title {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .task-item {
-    background-color: #e8f1fb;
-    padding: 10px;
-    margin: 10px;
+  background-color: #e8f1fb;
+  padding: 10px;
+  margin: 10px;
 }
 
 .task-item:hover {
-    background-color: #d4e5f8;
-    font-size: 18px;
+  background-color: #d4e5f8;
+  font-size: 18px;
 }
 
 .open-link {
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #333333;
-    padding: 2px 6px 2px 6px;
-    border-top: 3px solid #CCCCCC;
-    border-right: 3px solid #333333;
-    border-bottom: 3px solid #333333;
-    border-left: 3px solid #CCCCCC;
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 3px solid #cccccc;
+  border-right: 3px solid #333333;
+  border-bottom: 3px solid #333333;
+  border-left: 3px solid #cccccc;
 }
 
 .open-link:hover {
-    background-color: #c2c0c0;
-    font-size: 18px;
+  background-color: #c2c0c0;
+  font-size: 18px;
 }
